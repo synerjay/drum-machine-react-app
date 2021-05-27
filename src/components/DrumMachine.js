@@ -75,6 +75,7 @@ function DrumMachine() {
   const playSound = (id) => {
     document.getElementById(id).currentTime = 0;
     document.getElementById(id).play();
+    console.log(id);
   };
 
   const handleClick = (e) => {
@@ -91,12 +92,10 @@ function DrumMachine() {
   return (
     <div className='DrumMachine'>
       {audioFiles.map((item) => (
-        <DrumPad
-          label={item.label}
-          key={item.key}
-          url={item.url}
-          handleClick={handleClick}
-        />
+        <button id={item.label} className='drum-pad' onClick={handleClick}>
+          {item.key}
+          <audio id={item.key} className='clip' src={item.url}></audio>
+        </button>
       ))}
     </div>
   );
