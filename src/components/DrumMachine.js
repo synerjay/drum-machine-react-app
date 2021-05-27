@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import DrumPad from './DrumPad';
 
 function DrumMachine() {
   // Display Key Press Sate
@@ -62,8 +63,10 @@ function DrumMachine() {
   ];
 
   useEffect(() => {
+    //ComponentWillMount
     document.addEventListener('keydown', handleKeyPress);
 
+    //ComponentWillUnMount
     return () => document.removeEventListener('keydown', handleKeyPress);
   }, []);
 
@@ -87,9 +90,14 @@ function DrumMachine() {
 
   return (
     <div className='DrumMachine'>
-      <div>
-        <buttons>Blah</buttons>
-      </div>
+      {audioFiles.map((item) => (
+        <DrumPad
+          label={item.label}
+          key={item.key}
+          url={item.url}
+          handleClick={handleClick}
+        />
+      ))}
     </div>
   );
 }
