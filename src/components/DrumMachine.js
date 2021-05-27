@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import DrumPad from './DrumPad';
 
 function DrumMachine() {
   // Display Key Press Sate
