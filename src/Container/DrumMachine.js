@@ -4,7 +4,7 @@ function DrumMachine() {
   // Display Key Press Sate
   const [display, setDisplay] = useState('Press any key');
 
-  const audioArray = [
+  const audioFiles = [
     {
       label: 'Heater 1',
       keyCode: 81,
@@ -64,6 +64,24 @@ function DrumMachine() {
   // useEffect(()=>{
 
   // }, [])
+
+  // Play Sound Function
+
+  const playSound = (id) => {
+    document.getElementById(id).currentTime = 0;
+    document.getElementById(id).play();
+  };
+
+  const handleClick = (e) => {
+    playSound(e.target.innerText);
+    setDisplay(e.target.id);
+  };
+
+  const handleKeyPress = (e) => {
+    const target = audioFiles.find((item) => item.keyCode == e.keyCode);
+    playSound(String.fromCharCode(e.keyCode));
+    setDisplay(target.label);
+  };
 
   return (
     <div className='DrumMachine'>
