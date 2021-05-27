@@ -61,9 +61,11 @@ function DrumMachine() {
     },
   ];
 
-  // useEffect(()=>{
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyPress);
 
-  // }, [])
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, []);
 
   // Play Sound Function
 
