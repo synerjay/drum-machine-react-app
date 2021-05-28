@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { audioFiles } from '../AudioFiles';
+import Pad from './Pad';
 
 function DrumMachine() {
   // Display Key Press Sate
@@ -34,12 +35,7 @@ function DrumMachine() {
 
   return (
     <div className='DrumMachine'>
-      {audioFiles.map((item) => (
-        <button id={item.label} className='drum-pad' onClick={handleClick}>
-          {item.key}
-          <audio id={item.key} className='clip' src={item.url}></audio>
-        </button>
-      ))}
+      <Pad audioFiles={audioFiles} handleClick={handleClick} />
     </div>
   );
 }
