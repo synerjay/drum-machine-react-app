@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { audioFiles } from '../AudioFiles';
+import Display from './Display';
 import Pad from './Pad';
 
 function DrumMachine() {
@@ -35,6 +36,7 @@ function DrumMachine() {
 
   return (
     <div className='DrumMachine'>
+      <Display display={display} />
       <Pad audioFiles={audioFiles} handleClick={handleClick} />
     </div>
   );
