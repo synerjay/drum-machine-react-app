@@ -20,13 +20,11 @@ function DrumMachine() {
   const playSound = (id) => {
     document.getElementById(id).currentTime = 0;
     document.getElementById(id).play();
-    console.log(id);
   };
 
   const handleClick = (id) => {
     playSound(id);
     const foundLabel = audioFiles.find((item) => item.key == id);
-    console.log(foundLabel.label);
     setDisplay(foundLabel.label);
   };
 
