@@ -6,7 +6,7 @@ function Pad({ audioFiles, handleClick }) {
     <div className='DrumPad'>
       {audioFiles.map((item) => (
         <Button
-          id={item.label}
+          key={item.label}
           className='drum-pad'
           onClick={() => handleClick(item.key)}
         >

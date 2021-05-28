@@ -13,7 +13,7 @@ function DrumMachine() {
 
     //ComponentWillUnMount
     return () => document.removeEventListener('keydown', handleKeyPress);
-  }, []);
+  });
 
   // Play Sound Function
 
@@ -24,12 +24,12 @@ function DrumMachine() {
 
   const handleClick = (id) => {
     playSound(id);
-    const foundLabel = audioFiles.find((item) => item.key == id);
+    const foundLabel = audioFiles.find((item) => item.key === id);
     setDisplay(foundLabel.label);
   };
 
   const handleKeyPress = (e) => {
-    const target = audioFiles.find((item) => item.keyCode == e.keyCode);
+    const target = audioFiles.find((item) => item.keyCode === e.keyCode);
     playSound(String.fromCharCode(e.keyCode));
     setDisplay(target.label);
   };
