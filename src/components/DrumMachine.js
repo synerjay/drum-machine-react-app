@@ -23,9 +23,11 @@ function DrumMachine() {
     console.log(id);
   };
 
-  const handleClick = (e) => {
-    playSound(e.target.innerText);
-    setDisplay(e.target.id);
+  const handleClick = (id) => {
+    playSound(id);
+    const foundLabel = audioFiles.find((item) => item.key == id);
+    console.log(foundLabel.label);
+    setDisplay(foundLabel.label);
   };
 
   const handleKeyPress = (e) => {
