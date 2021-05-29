@@ -3,7 +3,7 @@ import React from 'react';
 
 function Pad({ audioFiles, handleClick }) {
   return (
-    <div className='DrumPad'>
+    <div className='DrumPad grid grid-cols-3 gap-4'>
       {audioFiles.map((item) => (
         <Button
           key={item.label}

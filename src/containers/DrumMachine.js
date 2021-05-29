@@ -35,7 +35,7 @@ function DrumMachine() {
   };
 
   return (
-    <div className='DrumMachine'>
+    <div className='DrumMachine flex flex-col justify-center w-96'>
       <Display display={display} />
       <Pad audioFiles={audioFiles} handleClick={handleClick} />
     </div>
