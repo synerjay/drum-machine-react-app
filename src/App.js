@@ -1,4 +1,4 @@
-import DrumMachine from './components/DrumMachine';
+import DrumMachine from './containers/DrumMachine';
 
 function App() {
   return (

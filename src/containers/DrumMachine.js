@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { audioFiles } from '../AudioFiles';
-import Display from './Display';
-import Pad from './Pad';
+import Display from '../components/Display';
+import Pad from '../components/Pad';
 
 function DrumMachine() {
   // Display Key Press Sate
