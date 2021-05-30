@@ -1,4 +1,3 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
 
 // Reference for keypress and active button
