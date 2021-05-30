@@ -1,6 +1,9 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
 
+// Reference for keypress and active button
+// https://stackoverflow.com/questions/51413364/apply-button-active-styles-on-keypress-in-react
+
 function Pad({ audioFiles, handleClick }) {
   return (
     <div className='DrumPad grid grid-cols-3 gap-4'>
