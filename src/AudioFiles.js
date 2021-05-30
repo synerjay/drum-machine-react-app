@@ -43,13 +43,13 @@ export const audioFiles = [
   },
   {
     label: 'Cev H2',
-    keyCode: 67,
+    keyCode: 88,
     key: 'X',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3',
   },
   {
     label: 'Chord 2',
-    keyCode: 88,
+    keyCode: 67,
     key: 'C',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3',
   },

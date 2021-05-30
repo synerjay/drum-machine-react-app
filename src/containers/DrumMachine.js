@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { audioFiles } from '../AudioFiles';
 import Display from '../components/Display';
 import Pad from '../components/Pad';
@@ -15,6 +15,9 @@ function DrumMachine() {
     return () => document.removeEventListener('keydown', handleKeyPress);
   });
 
+  // Button Ref
+  const buttonRef = useRef(new Array());
+
   // Play Sound Function
 
   const playSound = (id) => {
@@ -26,10 +29,15 @@ function DrumMachine() {
     playSound(id);
     const foundLabel = audioFiles.find((item) => item.key === id);
     setDisplay(foundLabel.label);
+    console.log(foundLabel.keyCode)
   };
 
   const handleKeyPress = (e) => {
     const target = audioFiles.find((item) => item.keyCode === e.keyCode);
+    console.log(e.keyCode)
+    console.log(target.keyCode)
+    const idArray = buttonRef.current.find((element) => element.id === target.label)
+    console.log(idArray)
     playSound(String.fromCharCode(e.keyCode));
     setDisplay(target.label);
   };
@@ -37,7 +45,11 @@ function DrumMachine() {
   return (
     <div className='DrumMachine flex flex-col justify-center w-96'>
       <Display display={display} />
-      <Pad audioFiles={audioFiles} handleClick={handleClick} />
+      <Pad
+        audioFiles={audioFiles}
+        buttonRef={buttonRef}
+        handleClick={handleClick}
+      />
     </div>
   );
 }
