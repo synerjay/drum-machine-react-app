@@ -8,7 +8,7 @@ function Pad({ audioFiles, handleClick }) {
         <button
           color='secondary'
           key={item.label}
-          className='drum-pad h-32 w-32 focus:outline-none bg-gray-300 text-gray-50 shadow-inner'
+          className='drum-pad h-32 w-32 focus:outline-none bg-gray-300 text-gray-50 shadow-inner active:bg-gray-600'
           onClick={() => handleClick(item.key)}
         >
           {item.key}
