@@ -30,6 +30,7 @@ input:checked ~ .dotB {
   background-color: #48bb78;
 }
 
+/* This will prevent the Display to move the other elements */
 .Display {
   max-width: 140px;
   max-height: 40px;
