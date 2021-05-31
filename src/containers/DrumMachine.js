@@ -43,10 +43,12 @@ function DrumMachine() {
     const idArray = buttonRef.current.find(
       (element) => element.id === target.label
     );
-    idArray.focus();
-    setTimeout(() => idArray.blur(), 100);
-    playSound(String.fromCharCode(e.keyCode));
-    setDisplay(target.label);
+    if (powerToggle) {
+      idArray.focus();
+      setTimeout(() => idArray.blur(), 100);
+      playSound(String.fromCharCode(e.keyCode));
+      setDisplay(target.label);
+    }
   };
 
   // Power Toggle
@@ -55,6 +57,7 @@ function DrumMachine() {
 
   const powerSwitch = () => {
     setPowerToggle(!powerToggle);
+    setDisplay(powerToggle ? 'POWER OFF' : 'POWER ON');
   };
 
   useEffect(() => {
@@ -80,6 +83,7 @@ function DrumMachine() {
         audioFiles={audioFiles}
         buttonRef={buttonRef}
         handleClick={handleClick}
+        disabled={!powerToggle}
       />
     </div>
   );
