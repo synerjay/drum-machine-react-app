@@ -7,7 +7,7 @@ import PowerToggle from '../components/PowerToggle';
 
 function DrumMachine() {
   // Display Key Press Sate
-  const [display, setDisplay] = useState('Press any key');
+  const [display, setDisplay] = useState('');
 
   useEffect(() => {
     //ComponentWillMount
