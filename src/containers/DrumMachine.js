@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { audioFiles } from '../AudioFiles';
 import Display from '../components/Display';
 import Pad from '../components/Pad';
+import PowerToggle from '../components/PowerToggle';
 
 function DrumMachine() {
   // Display Key Press Sate
@@ -47,9 +48,22 @@ function DrumMachine() {
     setDisplay(target.label);
   };
 
+  // Power Toggle
+
+  const [powerToggle, setPowerToggle] = useState(true);
+
+  const powerSwitch = () => {
+    setPowerToggle(!powerToggle);
+  };
+
+  useEffect(() => {
+    console.log(powerToggle);
+  }, [powerToggle]);
+
   return (
     <div className='DrumMachine flex flex-col justify-center w-96'>
       <Display display={display} />
+      <PowerToggle powerSwitch={powerSwitch} />
       <Pad
         audioFiles={audioFiles}
         buttonRef={buttonRef}
