@@ -40,14 +40,17 @@ function DrumMachine() {
 
   const handleKeyPress = (e) => {
     const target = audioFiles.find((item) => item.keyCode === e.keyCode);
-    const idArray = buttonRef.current.find(
-      (element) => element.id === target.label
-    );
-    if (powerToggle) {
-      idArray.focus();
-      setTimeout(() => idArray.blur(), 100);
-      playSound(String.fromCharCode(e.keyCode));
-      setDisplay(target.label);
+    if (target) {
+      const idArray = buttonRef.current.find(
+        (element) => element.id === target.label
+      );
+
+      if (powerToggle) {
+        idArray.focus();
+        setTimeout(() => idArray.blur(), 100);
+        playSound(String.fromCharCode(e.keyCode));
+        setDisplay(target.label);
+      }
     }
   };
 
@@ -75,10 +78,12 @@ function DrumMachine() {
   }, [soundChange]);
 
   return (
-    <div className='DrumMachine flex flex-col justify-center w-96'>
-      <Display display={display} />
-      <ChangeToggle soundChange={soundChange} />
-      <PowerToggle powerSwitch={powerSwitch} />
+    <div className='DrumMachine flex flex-col justify-center w-96 md:flex-row md:w-full md:space-x-2 md:items-center'>
+      <div className='Panel md:flex md:flex-wrap md:justify-center md:content-center md:h-96 md:max-w-md'>
+        <Display display={display} />
+        <ChangeToggle soundChange={soundChange} />
+        <PowerToggle powerSwitch={powerSwitch} />
+      </div>
       <Pad
         audioFiles={audioFiles}
         buttonRef={buttonRef}
