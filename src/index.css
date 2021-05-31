@@ -20,7 +20,12 @@ button:focus {
   background-color: gray;
 }
 
-input:checked ~ .dot {
+input:checked ~ .dotA {
   transform: translateX(100%);
   background-color: #fff;
+}
+
+input:checked ~ .dotB {
+  transform: translateX(100%);
+  background-color: #48bb78;
 }

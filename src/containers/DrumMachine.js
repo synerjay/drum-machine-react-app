@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { audioFiles } from '../AudioFiles';
+import ChangeToggle from '../components/ChangeToggle';
 import Display from '../components/Display';
 import Pad from '../components/Pad';
 import PowerToggle from '../components/PowerToggle';
@@ -60,9 +61,20 @@ function DrumMachine() {
     console.log(powerToggle);
   }, [powerToggle]);
 
+  const [soundChange, setSoundChange] = useState(false);
+
+  const changeSound = () => {
+    setSoundChange(!soundChange);
+  };
+
+  useEffect(() => {
+    console.log(soundChange);
+  }, [soundChange]);
+
   return (
     <div className='DrumMachine flex flex-col justify-center w-96'>
       <Display display={display} />
+      <ChangeToggle soundChange={soundChange} />
       <PowerToggle powerSwitch={powerSwitch} />
       <Pad
         audioFiles={audioFiles}
