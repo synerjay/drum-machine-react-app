@@ -13,13 +13,8 @@ function DrumMachine() {
   // Volume State
   const [volume, setVolume] = useState(0.3);
   const handleVolumeChange = (e) => {
-    const audio = document.querySelector('audio');
     setVolume(e.target.value);
   };
-
-  useEffect(() => {
-    console.log(volume);
-  }, [volume]);
 
   useEffect(() => {
     //ComponentWillMount
@@ -37,6 +32,7 @@ function DrumMachine() {
   const playSound = (id) => {
     const audio = document.getElementById(id);
     audio.currentTime = 0;
+    audio.volume = volume;
     audio.play();
   };
 
@@ -103,6 +99,7 @@ function DrumMachine() {
         buttonRef={buttonRef}
         handleClick={handleClick}
         disabled={!powerToggle}
+        volume={volume}
       />
     </div>
   );
