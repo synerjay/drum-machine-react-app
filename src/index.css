@@ -33,9 +33,14 @@ input:checked ~ .dotB {
 /* This will prevent the Display to move the other elements */
 .Display {
   background-color: #000;
-  max-width: 170px;
+  max-width: 210px;
   max-height: 50px;
-  min-width: 170px;
+  min-width: 210px;
   min-height: 50px;
   overflow: hidden;
+}
+
+.VolumeSection {
+  display: flex;
+  width: 210px;
 }

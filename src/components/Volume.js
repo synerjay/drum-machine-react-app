@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 function Volume({ handleVolumeChange, volume, disabled }) {
   return (
-    <Fragment>
+    <div className='VolumeSection justify-center'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         className='h-5 w-5'
@@ -38,7 +38,7 @@ function Volume({ handleVolumeChange, volume, disabled }) {
           clipRule='evenodd'
         />
       </svg>
-    </Fragment>
+    </div>
   );
 }
 

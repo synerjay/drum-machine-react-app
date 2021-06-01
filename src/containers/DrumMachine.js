@@ -80,15 +80,15 @@ function DrumMachine() {
 
   return (
     <div className='DrumMachine flex flex-col justify-center w-96 md:flex-row md:w-full md:space-x-2 md:items-center'>
-      <div className='Panel flex flex-wrap justify-center mb-7 space-y-7 md:space-y-10 md:content-center md:h-96 md:max-w-md'>
-        <Display display={display} />
-        <ChangeToggle disabled={!powerToggle} soundChange={soundChange} />
+      <div className='Panel flex flex-wrap md:flex-col justify-center mb-7 space-y-4 md:mr-7 md:space-y-7 md:content-center md:h-96 md:max-w-md'>
         <PowerToggle powerSwitch={powerSwitch} />
+        <Display display={display} />
         <Volume
           handleVolumeChange={handleVolumeChange}
           volume={volume}
           disabled={!powerToggle}
         />
+        <ChangeToggle disabled={!powerToggle} soundChange={soundChange} />
       </div>
       <Pad
         audioFiles={audioFiles}
