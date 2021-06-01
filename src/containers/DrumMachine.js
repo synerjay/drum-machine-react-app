@@ -11,7 +11,7 @@ function DrumMachine() {
   const [display, setDisplay] = useState('');
 
   // Volume State
-  const [volume, setVolume] = useState(0.3);
+  const [volume, setVolume] = useState(0.5);
   const handleVolumeChange = (e) => {
     setVolume(e.target.value);
   };

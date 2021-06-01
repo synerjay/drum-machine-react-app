@@ -5,16 +5,7 @@ import React, { useEffect, useRef } from 'react';
 
 // For future reference: Having useRef in an array of Elements
 // https://mattclaffey.medium.com/adding-react-refs-to-an-array-of-items-96e9a12ab40c
-function Pad({ audioFiles, handleClick, buttonRef, disabled, volume }) {
-  // Audio Ref
-  let audioEl = useRef(null);
-
-  useEffect(() => {
-    audioEl.current.volume = volume;
-    console.log(audioEl.current.volume);
-    console.log(volume);
-  }, [volume]);
-
+function Pad({ audioFiles, handleClick, buttonRef, disabled }) {
   return (
     <div className='DrumPad h-96 w-96 grid grid-cols-3 gap-1'>
       {audioFiles.map((item) => (
@@ -27,12 +18,7 @@ function Pad({ audioFiles, handleClick, buttonRef, disabled, volume }) {
           disabled={disabled}
         >
           {item.key}
-          <audio
-            id={item.key}
-            ref={audioEl}
-            className='clip'
-            src={item.url}
-          ></audio>
+          <audio id={item.key} className='clip' src={item.url}></audio>
         </button>
       ))}
     </div>

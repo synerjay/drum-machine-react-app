@@ -7,7 +7,7 @@ function Volume({ handleVolumeChange, volume }) {
         type='range'
         onChange={handleVolumeChange}
         name='volume'
-        class='VolumeSlider'
+        className='VolumeSlider'
         min='0'
         max='1'
         step='0.05'
