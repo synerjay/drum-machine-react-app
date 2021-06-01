@@ -1,10 +1,11 @@
 import React from 'react';
 
-function ChangeToggle({ soundChange }) {
+function ChangeToggle({ soundChange, disabled }) {
   return (
     <div
       onChange={soundChange}
       className='SoundChange flex items-center justify-center w-full mb-2'
+      disabled={disabled}
     >
       <label for='toggleB' className='flex items-center cursor-pointer'>
         {/* <!-- toggle --> */}

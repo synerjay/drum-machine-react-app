@@ -90,9 +90,13 @@ function DrumMachine() {
     <div className='DrumMachine flex flex-col justify-center w-96 md:flex-row md:w-full md:space-x-2 md:items-center'>
       <div className='Panel flex flex-wrap justify-center md:content-center md:h-96 md:max-w-md'>
         <Display display={display} />
-        <Volume handleVolumeChange={handleVolumeChange} volume={volume} />
-        <ChangeToggle soundChange={soundChange} />
+        <ChangeToggle disabled={!powerToggle} soundChange={soundChange} />
         <PowerToggle powerSwitch={powerSwitch} />
+        <Volume
+          handleVolumeChange={handleVolumeChange}
+          volume={volume}
+          disabled={!powerToggle}
+        />
       </div>
       <Pad
         audioFiles={audioFiles}
