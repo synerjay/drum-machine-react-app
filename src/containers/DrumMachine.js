@@ -14,6 +14,8 @@ function DrumMachine() {
   const [volume, setVolume] = useState(0.5);
   const handleVolumeChange = (e) => {
     setVolume(e.target.value);
+    let volPercent = Math.round(e.target.value * 100);
+    setDisplay(`VOLUME ${volPercent}%`);
   };
 
   useEffect(() => {
