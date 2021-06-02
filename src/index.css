@@ -17,18 +17,14 @@ code {
     monospace;
 }
 
-button:focus {
-  background-color: gray;
-}
-
 input:checked ~ .dotA {
   transform: translateX(100%);
-  background-color: #fff;
+  background-color: #222;
 }
 
 input:checked ~ .dotB {
   transform: translateX(100%);
-  background-color: #48bb78;
+  background-color: #222;
 }
 
 /* This will prevent the Display to move the other elements */
