@@ -80,7 +80,7 @@ function DrumMachine() {
 
   return (
     <div className='DrumMachine flex flex-col justify-center w-96 md:flex-row md:w-full md:items-center'>
-      <div className='Panel bg-yellow-700 flex flex-wrap md:flex-col justify-center space-y-5 p-7 md:p-12 md:space-y-8 md:content-center md:h-80 md:max-w-md'>
+      <div className='Panel bg-yellow-700 flex flex-wrap md:flex-col justify-center space-y-5 p-7 md:rounded-l-xl md:p-12 md:space-y-8 md:content-center md:h-80 md:max-w-md'>
         <PowerToggle powerSwitch={powerSwitch} />
         <Display display={display} />
         <Volume

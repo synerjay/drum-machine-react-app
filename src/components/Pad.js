@@ -7,13 +7,13 @@ import React, { useEffect, useRef } from 'react';
 // https://mattclaffey.medium.com/adding-react-refs-to-an-array-of-items-96e9a12ab40c
 function Pad({ audioFiles, handleClick, buttonRef, disabled }) {
   return (
-    <div className='DrumPad bg-blue-700 h-80 w-96 grid grid-cols-3 gap-1'>
+    <div className='DrumPad bg-blue-700 p-6 h-80 w-96 grid grid-cols-3 gap-1 md:rounded-r-xl'>
       {audioFiles.map((item) => (
         <button
           id={item.label}
           key={item.key}
           ref={(element) => buttonRef.current.push(element)}
-          className='drum-pad bg-gray-300 text-gray-50 shadow-inner focus:outline-none'
+          className='drum-pad bg-gray-300 text-gray-50 shadow-inner focus:outline-none rounded-lg'
           onClick={() => handleClick(item.key)}
           disabled={disabled}
         >
