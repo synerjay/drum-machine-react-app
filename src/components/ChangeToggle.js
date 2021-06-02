@@ -18,7 +18,7 @@ function ChangeToggle({ soundChange, disabled }) {
           <div className='dotB absolute w-6 h-6 bg-white rounded-full shadow -left-1 -top-1 transition'></div>
         </div>
         {/* <!-- label --> */}
-        <div className='ml-2 text-gray-700 font-medium'>Bank</div>
+        <div className='ml-2 text-gray-200 uppercase font-medium'>Bank</div>
       </label>
     </div>
   );

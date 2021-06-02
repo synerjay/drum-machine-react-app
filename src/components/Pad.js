@@ -16,7 +16,7 @@ function Pad({ audioFiles, handleClick, buttonRef, disabled }) {
           id={item.label}
           key={item.key}
           ref={(element) => buttonRef.current.push(element)}
-          className='drum-pad bg-gray-300 text-gray-50 shadow-inner focus:outline-none rounded-lg'
+          className='drum-pad bg-gray-300 text-gray-700 shadow-inner focus:outline-none rounded-lg'
           onClick={() => handleClick(item.key)}
           disabled={disabled}
         >

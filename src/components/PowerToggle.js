@@ -17,7 +17,7 @@ function PowerToggle({ powerSwitch }) {
           <div className='dotA absolute w-6 h-6 bg-green-500 rounded-full shadow -left-1 -top-1 transition'></div>
         </div>
         {/* <!-- label --> */}
-        <div className='ml-2 text-gray-700 font-medium'>Power</div>
+        <div className='ml-2 text-gray-200 font-medium uppercase'>Power</div>
       </label>
     </div>
   );
