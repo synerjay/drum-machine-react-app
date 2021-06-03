@@ -1,13 +1,8 @@
 import React from 'react';
 
 function Display({ display, powerToggle }) {
-  const noGlowStyle = {
-    '-webkitBoxShadow': null,
-  };
-
   return (
     <div
-      // style={powerToggle == false ? noGlowStyle : null}
       className={
         'Display rounded-xl ' +
         (powerToggle == false ? 'shadow-none' : 'shadow')
