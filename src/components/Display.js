@@ -1,8 +1,18 @@
 import React from 'react';
 
-function Display({ display }) {
+function Display({ display, powerToggle }) {
+  const noGlowStyle = {
+    '-webkitBoxShadow': null,
+  };
+
   return (
-    <div className='Display rounded-xl '>
+    <div
+      // style={powerToggle == false ? noGlowStyle : null}
+      className={
+        'Display rounded-xl ' +
+        (powerToggle == false ? 'shadow-none' : 'shadow')
+      }
+    >
       <h2 className='DisplayText text-2xl text-gray-100 bg-black flex pt-2 justify-center uppercase text-center'>
         {display}
       </h2>

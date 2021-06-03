@@ -88,7 +88,7 @@ function DrumMachine() {
         id='glow-blue'
       >
         <PowerToggle powerSwitch={powerSwitch} />
-        <Display display={display} />
+        <Display powerToggle={powerToggle} display={display} />
         <Volume
           handleVolumeChange={handleVolumeChange}
           volume={volume}
@@ -100,7 +100,7 @@ function DrumMachine() {
         audioFiles={audioFiles}
         buttonRef={buttonRef}
         handleClick={handleClick}
-        disabled={!powerToggle}
+        powerToggle={powerToggle}
       />
     </div>
   );
