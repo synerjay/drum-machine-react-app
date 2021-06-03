@@ -84,7 +84,7 @@ function DrumMachine() {
       id='glow-blue'
     >
       <div
-        className='Panel bg-gray-600 flex flex-wrap rounded-t-xl md:rounded-t-none md:flex-col justify-center space-y-5 p-7 md:rounded-l-xl md:p-12 md:space-y-8 md:content-center md:h-80 md:max-w-md'
+        className='Panel flex flex-wrap rounded-t-xl md:rounded-t-none md:flex-col justify-center space-y-5 p-7 md:rounded-l-xl md:p-12 md:space-y-8 md:content-center md:h-80 md:max-w-md'
         id='glow-blue'
       >
         <PowerToggle powerSwitch={powerSwitch} />

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #222;
+  background-color: #000;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -35,6 +35,9 @@ input:checked ~ .dotB {
   min-width: 210px;
   min-height: 50px;
   overflow: hidden;
+  -webkit-box-shadow: 0 0 40px #ba01ff;
+  -moz-box-shadow: 0 0 40px #ba01ff;
+  box-shadow: 0 0 40px #ba01ff;
 }
 
 .VolumeSection {
@@ -42,39 +45,18 @@ input:checked ~ .dotB {
   width: 210px;
 }
 
-.demo-container {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  height: auto;
-  margin: 50px auto;
-}
-.demo-box {
-  width: 250px;
-  height: 250px;
-  display: inline-block;
-  border-radius: 12px;
-  margin: 20px;
+.Panel {
+  background-color: #222;
 }
 
-/* Glow */
-.demo-box {
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 4s ease-in-out infinite alternate;
+.DrumPad {
+  background-color: #222;
 }
 
-/* Glow Colors */
-#glow-blue {
-  animation-name: glow-blue;
+.drum-pad {
+  -webkit-box-shadow: 0 0 20px #ba01ff;
+  -moz-box-shadow: 0 0 20px #ba01ff;
+  box-shadow: 0 0 20px #ba01ff;
 }
-@-webkit-keyframes glow-blue {
-  from {
-    box-shadow: 0 0 2px #82d8f9, 0 0 10px #82d8f9, 0 0 20px #00a6fb,
-      0 0 30px #00a6fb;
-  }
-  to {
-    box-shadow: 0 0 10px #82d8f9, 0 0 20px #5ec9fe, 0 0 30px #5ec9fe,
-      0 0 40px #5ec9fe;
-  }
-}
+
+/* box-shadow: 0 0 40px #ba01ff; */
