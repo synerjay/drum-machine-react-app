@@ -4,7 +4,7 @@ function Display({ display, powerToggle }) {
   return (
     <div
       className={
-        'Display rounded-xl ' +
+        'Display rounded-xl transition ease-out duration-300 ' +
         (powerToggle == false ? 'shadow-none' : 'shadow')
       }
     >
