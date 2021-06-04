@@ -5,10 +5,15 @@ function Display({ display, powerToggle }) {
     <div
       className={
         'Display rounded-xl transition ease-out duration-300 ' +
-        (powerToggle == false ? 'shadow-none' : 'shadow')
+        (!powerToggle ? 'shadow-none' : 'shadow')
       }
     >
-      <h2 className='DisplayText text-2xl text-gray-100 bg-black flex pt-2 justify-center uppercase text-center'>
+      <h2
+        className={
+          'DisplayText text-2xl bg-black flex pt-2 justify-center uppercase text-center ' +
+          (!powerToggle ? 'text-red-600' : 'text-blue-400')
+        }
+      >
         {display}
       </h2>
     </div>
