@@ -5,7 +5,7 @@ function Volume({ handleVolumeChange, volume, disabled }) {
     <div className='VolumeSection justify-center'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        className='h-5 w-5'
+        className='h-5 w-5 text-white'
         viewBox='0 0 20 20'
         fill='currentColor'
       >
@@ -28,7 +28,7 @@ function Volume({ handleVolumeChange, volume, disabled }) {
       />{' '}
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        className='h-5 w-5'
+        className='h-5 w-5 text-white'
         viewBox='0 0 20 20'
         fill='currentColor'
       >

@@ -13,7 +13,11 @@ module.exports = {
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       none: 'none',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ['Righteous'],
+      },
+    },
   },
   variants: {
     extend: {
