@@ -71,15 +71,12 @@ function DrumMachine() {
     setDisplay(powerToggle ? 'POWER OFF' : 'POWER ON');
   };
 
+  // Change button sounds state to Pokemon and vice versa
   const [soundChange, setSoundChange] = useState(false);
 
   const changeSound = () => {
     setSoundChange(!soundChange);
   };
-
-  useEffect(() => {
-    console.log(soundChange);
-  }, [soundChange]);
 
   return (
     <div
