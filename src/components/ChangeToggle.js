@@ -1,9 +1,9 @@
 import React from 'react';
 
-function ChangeToggle({ soundChange, disabled }) {
+function ChangeToggle({ changeSound, disabled }) {
   return (
     <div
-      onChange={soundChange}
+      onChange={changeSound}
       className='SoundChange flex items-center justify-center w-full mb-2'
       disabled={disabled}
     >

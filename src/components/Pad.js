@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from 'react';
 
 // For future reference: Having useRef in an array of Elements
 // https://mattclaffey.medium.com/adding-react-refs-to-an-array-of-items-96e9a12ab40c
-function Pad({ audioFiles, handleClick, buttonRef, powerToggle }) {
+function Pad({ audioFiles, handleClick, buttonRef, powerToggle, soundChange }) {
   return (
     <div
       id='glow-blue'
@@ -13,7 +13,7 @@ function Pad({ audioFiles, handleClick, buttonRef, powerToggle }) {
     >
       {audioFiles.map((item) => (
         <button
-          id={item.label}
+          id={soundChange ? item.label2 : item.label}
           key={item.key}
           ref={(element) => buttonRef.current.push(element)}
           className={
@@ -24,7 +24,11 @@ function Pad({ audioFiles, handleClick, buttonRef, powerToggle }) {
           disabled={!powerToggle}
         >
           {item.key}
-          <audio id={item.key} className='clip' src={item.url}></audio>
+          <audio
+            id={item.key}
+            className='clip'
+            src={soundChange ? item.file : item.url}
+          ></audio>
         </button>
       ))}
     </div>

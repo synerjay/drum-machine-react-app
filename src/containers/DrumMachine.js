@@ -39,27 +39,26 @@ function DrumMachine() {
 
   const handleClick = (id) => {
     playSound(id);
-    const foundLabel = audioFiles.find((item) => item.key === id);
-    setDisplay(foundLabel.label);
-    const idArray = buttonRef.current.find(
-      (element) => element.id === foundLabel.label
-    );
+    const target = audioFiles.find((item) => item.key === id);
+    const label = soundChange ? target.label2 : target.label;
+    setDisplay(label);
+    const idArray = buttonRef.current.find((element) => element.id === label);
     idArray.focus();
     setTimeout(() => idArray.blur(), 5);
   };
 
   const handleKeyPress = (e) => {
     const target = audioFiles.find((item) => item.keyCode === e.keyCode);
+
+    const label = soundChange ? target.label2 : target.label;
     if (target) {
-      const idArray = buttonRef.current.find(
-        (element) => element.id === target.label
-      );
+      const idArray = buttonRef.current.find((element) => element.id === label);
 
       if (powerToggle) {
         idArray.focus();
         setTimeout(() => idArray.blur(), 100);
         playSound(String.fromCharCode(e.keyCode));
-        setDisplay(target.label);
+        setDisplay(label);
       }
     }
   };
@@ -78,6 +77,10 @@ function DrumMachine() {
     setSoundChange(!soundChange);
   };
 
+  useEffect(() => {
+    console.log(soundChange);
+  }, [soundChange]);
+
   return (
     <div
       className='DrumMachine flex flex-col justify-center w-96 md:flex-row md:w-full md:items-center'
@@ -94,13 +97,14 @@ function DrumMachine() {
           volume={volume}
           disabled={!powerToggle}
         />
-        <ChangeToggle disabled={!powerToggle} soundChange={soundChange} />
+        <ChangeToggle disabled={!powerToggle} changeSound={changeSound} />
       </div>
       <Pad
         audioFiles={audioFiles}
         buttonRef={buttonRef}
         handleClick={handleClick}
         powerToggle={powerToggle}
+        soundChange={soundChange}
       />
     </div>
   );
