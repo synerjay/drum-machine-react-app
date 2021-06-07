@@ -75,7 +75,7 @@ export const audioFiles = [
   },
   {
     label: 'Chord 2',
-    label2: "Gotta Catch'em all!",
+    label2: 'Pokemon Theme',
     keyCode: 67,
     key: 'C',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3',
