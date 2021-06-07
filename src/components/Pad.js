@@ -9,7 +9,10 @@ function Pad({ audioFiles, handleClick, buttonRef, powerToggle, soundChange }) {
   return (
     <div
       id='glow-blue'
-      className='DrumPad bg-gray-800 p-6 h-80 w-96 grid grid-cols-3 gap-1 rounded-b-xl md:rounded-b-none md:rounded-r-xl'
+      className={
+        'DrumPad p-6 h-80 w-96 grid grid-cols-3 gap-1 rounded-b-xl md:rounded-b-none md:rounded-r-xl transition ease-out duration-300 ' +
+        (soundChange ? 'bg-red-800' : 'bg-gray-800')
+      }
     >
       {audioFiles.map((item) => (
         <button

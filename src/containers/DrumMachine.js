@@ -40,18 +40,19 @@ function DrumMachine() {
   const handleClick = (id) => {
     playSound(id);
     const target = audioFiles.find((item) => item.key === id);
-    const label = soundChange ? target.label2 : target.label;
-    setDisplay(label);
-    const idArray = buttonRef.current.find((element) => element.id === label);
-    idArray.focus();
-    setTimeout(() => idArray.blur(), 5);
+    if (target) {
+      const label = soundChange ? target.label2 : target.label;
+      setDisplay(label);
+      const idArray = buttonRef.current.find((element) => element.id === label);
+      idArray.focus();
+      setTimeout(() => idArray.blur(), 5);
+    }
   };
 
   const handleKeyPress = (e) => {
     const target = audioFiles.find((item) => item.keyCode === e.keyCode);
-
-    const label = soundChange ? target.label2 : target.label;
     if (target) {
+      const label = soundChange ? target.label2 : target.label;
       const idArray = buttonRef.current.find((element) => element.id === label);
 
       if (powerToggle) {
@@ -76,6 +77,11 @@ function DrumMachine() {
 
   const changeSound = () => {
     setSoundChange(!soundChange);
+    if (!soundChange) {
+      setDisplay('POKEMON');
+    } else {
+      setDisplay('DRUM KIT');
+    }
   };
 
   return (
@@ -84,7 +90,10 @@ function DrumMachine() {
       id='glow-blue'
     >
       <div
-        className='Panel bg-gray-800 flex flex-wrap rounded-t-xl md:rounded-t-none md:flex-col justify-center space-y-5 p-7 md:rounded-l-xl md:p-12 md:space-y-8 md:content-center md:h-80 md:max-w-md'
+        className={
+          'Panel flex flex-wrap rounded-t-xl md:rounded-t-none md:flex-col justify-center space-y-5 p-7 md:rounded-l-xl md:p-12 md:space-y-8 md:content-center md:h-80 md:max-w-md transition ease-out duration-300 ' +
+          (soundChange ? 'bg-red-800' : 'bg-gray-800')
+        }
         id='glow-blue'
       >
         <PowerToggle powerSwitch={powerSwitch} />
