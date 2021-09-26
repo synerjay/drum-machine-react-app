@@ -1,12 +1,23 @@
-import pikachu from './sounds/pokemon/pikachu.mp3';
-import baulbasaur from './sounds/pokemon/baulbasaur.mp3';
-import squirtle from './sounds/pokemon/squirtle.mp3';
-import charmander from './sounds/pokemon/charmander.mp3';
-import jigglypuff from './sounds/pokemon/jigglypuff.mp3';
-import slowpoke from './sounds/pokemon/slowpoke.mp3';
-import ashketchum from './sounds/pokemon/ashketchum.mp3';
-import congrats from './sounds/pokemon/congrats.mp3';
-import gottacatchemall from './sounds/pokemon/gottacatchemall.mp3';
+// import pikachu from './sounds/pokemon/pikachu.mp3';
+// import baulbasaur from './sounds/pokemon/baulbasaur.mp3';
+// import squirtle from './sounds/pokemon/squirtle.mp3';
+// import charmander from './sounds/pokemon/charmander.mp3';
+// import jigglypuff from './sounds/pokemon/jigglypuff.mp3';
+// import slowpoke from './sounds/pokemon/slowpoke.mp3';
+// import ashketchum from './sounds/pokemon/ashketchum.mp3';
+// import congrats from './sounds/pokemon/congrats.mp3';
+// import gottacatchemall from './sounds/pokemon/gottacatchemall.mp3';
+
+//TypeScript style of importing files are as follows:
+const pikachu = require('./sounds/pokemon/pikachu.mp3');
+const baulbasaur = require('./sounds/pokemon/baulbasaur.mp3');
+const squirtle = require('./sounds/pokemon/squirtle.mp3');
+const charmander = require('./sounds/pokemon/charmander.mp3');
+const jigglypuff = require('./sounds/pokemon/jigglypuff.mp3');
+const slowpoke = require('./sounds/pokemon/slowpoke.mp3');
+const ashketchum = require('./sounds/pokemon/ashketchum.mp3');
+const congrats = require('./sounds/pokemon/congrats.mp3');
+const gottacatchemall = require('./sounds/pokemon/gottacatchemall.mp3');
 
 export const audioFiles = [
   {

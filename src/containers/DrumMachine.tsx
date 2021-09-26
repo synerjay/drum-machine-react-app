@@ -27,17 +27,18 @@ function DrumMachine() {
   });
 
   // Button Ref
-  const buttonRef = useRef(new Array());
+  const buttonRef = useRef([]);
 
   // Play Sound Function
-  const playSound = (id) => {
-    const audio = document.getElementById(id);
+  const playSound = (id: string) => {
+    const audio = document.getElementById(id) as HTMLAudioElement;
+
     audio.currentTime = 0;
     audio.volume = volume;
     audio.play();
   };
 
-  const handleClick = (id) => {
+  const handleClick = (id: string) => {
     playSound(id);
     const target = audioFiles.find((item) => item.key === id);
     if (target) {

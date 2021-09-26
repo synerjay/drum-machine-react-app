@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 // Reference for keypress and active button
 // https://stackoverflow.com/questions/51413364/apply-button-active-styles-on-keypress-in-react
@@ -21,7 +21,7 @@ function Pad({ audioFiles, handleClick, buttonRef, powerToggle, soundChange }) {
           ref={(element) => buttonRef.current.push(element)}
           className={
             'drum-pad rounded-lg bg-gray-300 text-gray-700 focus:outline-none transform focus:translate-y-1 focus:bg-opacity-10 | transition ease-out duration-300 ' +
-            (powerToggle == false ? 'shadow-none' : 'shadow')
+            (powerToggle === false ? 'shadow-none' : 'shadow')
           }
           onClick={() => handleClick(item.key)}
           disabled={!powerToggle}
