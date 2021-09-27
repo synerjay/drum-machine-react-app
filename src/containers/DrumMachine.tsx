@@ -7,11 +7,12 @@ import PowerToggle from '../components/PowerToggle';
 import Volume from '../components/Volume';
 
 function DrumMachine() {
-  // Display Key Press Sate
-  const [display, setDisplay] = useState('');
+  // App States
+  const [display, setDisplay] = useState(''); // Display Key Press Sate
+  const [soundChange, setSoundChange] = useState(false); // Change button sounds state to Pokemon and vice versa
+  const [powerToggle, setPowerToggle] = useState(true); // Power Toggle
+  const [volume, setVolume] = useState(0.5); // Volume State
 
-  // Volume State
-  const [volume, setVolume] = useState(0.5);
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setVolume(parseFloat((e.target as HTMLInputElement).value));
     let volPercent = Math.round(
@@ -71,16 +72,10 @@ function DrumMachine() {
     }
   };
 
-  // Power Toggle
-  const [powerToggle, setPowerToggle] = useState(true);
-
   const powerSwitch = () => {
     setPowerToggle(!powerToggle);
     setDisplay(powerToggle ? 'POWER OFF' : 'POWER ON');
   };
-
-  // Change button sounds state to Pokemon and vice versa
-  const [soundChange, setSoundChange] = useState(false);
 
   const changeSound = () => {
     setSoundChange(!soundChange);
