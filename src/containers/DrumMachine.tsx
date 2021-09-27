@@ -37,7 +37,9 @@ function DrumMachine() {
 
     audio.currentTime = 0;
     audio.volume = volume;
-    audio.play();
+    audio.play().catch((error) => {
+      console.error(error);
+    });
   };
 
   const handleClick = (id: string) => {
