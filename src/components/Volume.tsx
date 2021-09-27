@@ -1,6 +1,12 @@
 import React from 'react';
 
-function Volume({ handleVolumeChange, volume, disabled }) {
+interface VolumeProps {
+  handleVolumeChange(e: React.ChangeEvent<HTMLInputElement>): void;
+  volume: number;
+  disabled: boolean;
+}
+
+function Volume({ handleVolumeChange, volume, disabled }: VolumeProps) {
   return (
     <div className='VolumeSection justify-center'>
       <svg
@@ -17,7 +23,7 @@ function Volume({ handleVolumeChange, volume, disabled }) {
       </svg>
       <input
         type='range'
-        onChange={handleVolumeChange}
+        onChange={(e) => handleVolumeChange(e)}
         name='volume'
         className='VolumeSlider'
         min='0'

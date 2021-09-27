@@ -5,7 +5,31 @@ import React from 'react';
 
 // For future reference: Having useRef in an array of Elements
 // https://mattclaffey.medium.com/adding-react-refs-to-an-array-of-items-96e9a12ab40c
-function Pad({ audioFiles, handleClick, buttonRef, powerToggle, soundChange }) {
+
+interface AudioFiles {
+  label: string;
+  label2: string;
+  keyCode: number;
+  key: string;
+  url: string;
+  file: any;
+}
+
+interface PadProps {
+  audioFiles: AudioFiles[];
+  handleClick(e: string): void;
+  buttonRef: React.MutableRefObject<HTMLButtonElement[]>;
+  powerToggle: boolean;
+  soundChange: boolean;
+}
+
+function Pad({
+  audioFiles,
+  handleClick,
+  buttonRef,
+  powerToggle,
+  soundChange,
+}: PadProps) {
   return (
     <div
       id='glow-blue'
@@ -18,7 +42,11 @@ function Pad({ audioFiles, handleClick, buttonRef, powerToggle, soundChange }) {
         <button
           id={soundChange ? item.label2 : item.label}
           key={item.key}
-          ref={(element) => buttonRef.current.push(element)}
+          ref={(element) => {
+            if (element) {
+              buttonRef.current.push(element);
+            }
+          }}
           className={
             'drum-pad rounded-lg bg-gray-300 text-gray-700 focus:outline-none transform focus:translate-y-1 focus:bg-opacity-10 | transition ease-out duration-300 ' +
             (powerToggle === false ? 'shadow-none' : 'shadow')

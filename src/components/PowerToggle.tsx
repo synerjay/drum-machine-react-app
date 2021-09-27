@@ -1,12 +1,12 @@
 import React from 'react';
 
-function PowerToggle({ powerSwitch }) {
+function PowerToggle({ powerSwitch }: { powerSwitch(): void }) {
   return (
     <div
       onChange={powerSwitch}
       className='PowerChange flex items-center justify-center w-full mb-2'
     >
-      <label for='toogleA' className='flex items-center cursor-pointer'>
+      <label htmlFor='toogleA' className='flex items-center cursor-pointer'>
         {/* Toggle */}
         <div className='relative'>
           {/* Input */}

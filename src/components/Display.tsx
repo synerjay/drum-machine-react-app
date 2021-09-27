@@ -1,6 +1,12 @@
 import React from 'react';
 
-function Display({ display, powerToggle }) {
+function Display({
+  display,
+  powerToggle,
+}: {
+  display: string;
+  powerToggle: boolean;
+}) {
   return (
     <div
       className={

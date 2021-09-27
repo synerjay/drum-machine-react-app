@@ -12,9 +12,11 @@ function DrumMachine() {
 
   // Volume State
   const [volume, setVolume] = useState(0.5);
-  const handleVolumeChange = (e) => {
-    setVolume(e.target.value);
-    let volPercent = Math.round(e.target.value * 100);
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setVolume(parseFloat((e.target as HTMLInputElement).value));
+    let volPercent = Math.round(
+      parseFloat((e.target as HTMLInputElement).value) * 100
+    );
     setDisplay(`VOLUME ${volPercent}%`);
   };
 
@@ -27,7 +29,7 @@ function DrumMachine() {
   });
 
   // Button Ref
-  const buttonRef = useRef([]);
+  const buttonRef = useRef<HTMLButtonElement[] | []>([]);
 
   // Play Sound Function
   const playSound = (id: string) => {
@@ -45,18 +47,20 @@ function DrumMachine() {
       const label = soundChange ? target.label2 : target.label;
       setDisplay(label);
       const idArray = buttonRef.current.find((element) => element.id === label);
-      idArray.focus();
-      setTimeout(() => idArray.blur(), 5);
+      if (idArray) {
+        idArray.focus();
+        setTimeout(() => idArray.blur(), 5);
+      }
     }
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: KeyboardEvent) => {
     const target = audioFiles.find((item) => item.keyCode === e.keyCode);
     if (target) {
       const label = soundChange ? target.label2 : target.label;
       const idArray = buttonRef.current.find((element) => element.id === label);
 
-      if (powerToggle) {
+      if (powerToggle && idArray) {
         idArray.focus();
         setTimeout(() => idArray.blur(), 100);
         playSound(String.fromCharCode(e.keyCode));

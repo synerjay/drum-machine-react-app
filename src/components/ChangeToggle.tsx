@@ -1,17 +1,24 @@
 import React from 'react';
 
-function ChangeToggle({ changeSound, disabled }) {
+interface ChangeToggleProps {
+  changeSound(): void;
+  disabled: boolean;
+}
+
+function ChangeToggle({ changeSound, disabled }: ChangeToggleProps) {
   return (
-    <div
-      onChange={changeSound}
-      className='SoundChange flex items-center justify-center w-full mb-2'
-      disabled={disabled}
-    >
-      <label for='toggleB' className='flex items-center cursor-pointer'>
+    <div className='SoundChange flex items-center justify-center w-full mb-2'>
+      <label htmlFor='toggleB' className='flex items-center cursor-pointer'>
         {/* <!-- toggle --> */}
         <div className='relative'>
           {/* <!-- input --> */}
-          <input id='toggleB' type='checkbox' className='sr-only' />
+          <input
+            id='toggleB'
+            onChange={changeSound}
+            type='checkbox'
+            className='sr-only'
+            disabled={disabled}
+          />
           {/* <!-- line --> */}
           <div className='w-10 h-4 bg-gray-400 rounded-full shadow-inner'></div>
           {/* <!-- dot --> */}
